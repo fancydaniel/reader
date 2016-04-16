@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'welcome/about', path: :about
 
   root 'welcome#index' 
+  resources :feeds
 end

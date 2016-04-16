@@ -1,0 +1,25 @@
+<h2>Feed Page</h2>
+
+<%= form_for @feed do |f| %>
+  <%= f.label :URL %>
+  <%= f.text_field :url %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+
+<div>
+  <% @feeds.each do |feed| %>
+    
+  <!-- Create a link to go to show page -->
+    <% if feed.name == nil %>
+    <h3><%= link_to feed.url, feed %>
+    <% else %>  
+     <h3><%= link_to feed.name, feed %>
+    <% end %>
+  <!--  -->
+    <% feed.entries.each do |entry| %>
+      <h4><%= sanitize link_to entry.title %></h4>
+      <p><%= sanitize get_info(entry), length: 450 %></p>
+    <% end %>
+  <% end %>
+</div>
