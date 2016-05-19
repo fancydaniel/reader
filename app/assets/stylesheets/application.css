@@ -12,6 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
+
  */
 
  body {
@@ -26,4 +29,15 @@
  .navigation li {
   display: inline-block;
   padding-bottom: 15px;
+ }
+
+ /*** Form Styles ***/
+
+ .form_label {
+  text-transform: uppercase;
+ }
+
+ .button-push {
+  margin-top: -15px;
+ }
  }

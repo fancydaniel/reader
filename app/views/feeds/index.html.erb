@@ -1,15 +1,21 @@
 <h2>Feed Page</h2>
 
-<%= form_for @feed do |f| %>
-  <%= f.label :URL %>
-  <%= f.text_field :url %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="row">
+  <div class="small-8 columns">
+    <div class="input-group">
+  
+      <%= form_for @feed do |f| %>
+          <%= f.label :URL, class: "form_label" %>
+          <%= f.text_field :url %>
+          <%= f.submit "Submit", class: "button postfix" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-
-<div>
+<div class="row">
+  <div class="small-10 columns">
   <% @feeds.each do |feed| %>
-    
   <!-- Create a link to go to show page -->
     <% if feed.name == nil %>
     <h3><%= link_to feed.url, feed %>
@@ -19,7 +25,8 @@
   <!--  -->
     <% feed.entries.each do |entry| %>
       <h4><%= sanitize link_to entry.title %></h4>
-      <p><%= sanitize get_info(entry), length: 450 %></p>
+      <p><%= sanitize get_info(entry), length: 550 %></p>
     <% end %>
   <% end %>
+</div>
 </div>

@@ -2,19 +2,24 @@
 <html>
 <head>
   <title>Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <nav class="navigation">
-    <li><%= link_to "Home", welcome_index_path %></li>
-    <li><%= link_to "About", welcome_about_path %></li>
-    <li><%= link_to "Feed", feeds_path %></li>
-  </nav>
+<div class="row">
+  <div class="small-12 columns">
 
-<%= yield %>
+      <nav class="navigation">
+        <li><%= link_to "Home", welcome_index_path %></li>
+        <li><%= link_to "About", welcome_about_path %></li>
+        <li><%= link_to "Feed", feeds_path %></li>
+      </nav>
 
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>
