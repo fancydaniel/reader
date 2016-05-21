@@ -204,6 +204,7 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  json (>= 1.8.2)
   link_thumbnailer
   rails (= 4.2.5)
   sass-rails (~> 5.0)

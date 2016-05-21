@@ -11,6 +11,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Switched from 1.8.3 running into issues with irb
+gem 'json', '>= 1.8.2'
+
 gem 'feedjira'
 gem 'foundation-rails'
 gem 'link_thumbnailer'

@@ -1,10 +1,5 @@
 class Feed < ActiveRecord::Base
 
-
-  # def entries
-  #   feed = feed = Feedjira::Feed.fetch_and_parse url
-  # end
-
   def entries(num = 3)
     Feedjira::Feed.add_common_feed_entry_element("img")
     feed = Feedjira::Feed.fetch_and_parse(url)
