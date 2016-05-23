@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521051039) do
+ActiveRecord::Schema.define(version: 20160521060738) do
 
   create_table "feeds", force: :cascade do |t|
     t.string   "name"
@@ -20,12 +20,23 @@ ActiveRecord::Schema.define(version: 20160521051039) do
     t.string   "url"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string   "url"
+    t.string   "image_url"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["item_id"], name: "index_images_on_item_id"
+
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "summary"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url"
   end
 
 end
